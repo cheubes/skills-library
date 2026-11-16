@@ -1,6 +1,7 @@
 ---
 name: article-summary
 description: Summarizes a press article faithfully, without interpretation, preserving the author's nuances and caveats. The article is either the page open in the browser (Claude for Chrome) or a link provided by the user. Use when the user asks to summarize an article, a news page or a link ("résume cet article", "fais-moi un résumé", "TL;DR", "summarize this article"), even without giving a URL.
+license: CC0-1.0
 ---
 
 # Article summary

@@ -1,6 +1,7 @@
 ---
 name: restaurant-finder
 description: Searches the web for restaurants in a given area and returns a Markdown list with cuisine type, price range, address with a Google Maps link, website, Google and TripAdvisor ratings, and opening hours. Use when the user asks to find restaurants, wants recommendations, or is looking for places to eat in a city, neighborhood or region.
+license: CC0-1.0
 ---
 
 # Restaurant finder
