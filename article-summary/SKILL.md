@@ -1,53 +1,53 @@
 ---
 name: article-summary
-description: Résume un article de presse en restant fidèle à son contenu, sans interprétation, en préservant les nuances et réserves de l'auteur. L'article est soit celui de la page ouverte dans le navigateur (Claude pour Chrome), soit celui d'un lien fourni par l'utilisateur. À utiliser quand l'utilisateur demande de résumer un article, une page d'actualité ou un lien ("résume cet article", "fais-moi un résumé", "TL;DR", "summarize this article"), même sans préciser d'URL.
+description: Summarizes a press article faithfully, without interpretation, preserving the author's nuances and caveats. The article is either the page open in the browser (Claude for Chrome) or a link provided by the user. Use when the user asks to summarize an article, a news page or a link ("résume cet article", "fais-moi un résumé", "TL;DR", "summarize this article"), even without giving a URL.
 ---
 
 # Article summary
 
-Résume un article de presse de façon fidèle, sans rien ajouter ni interpréter, en conservant les nuances et les réserves exprimées par l'auteur.
+Summarize a press article faithfully, without adding or interpreting anything, while keeping the nuances and caveats expressed by the author.
 
-## Récupération de l'article
+## Retrieving the article
 
-1. **Un lien est fourni.** Lire la page correspondante, même si un autre onglet est ouvert dans le navigateur.
-2. **Aucun lien, mais un navigateur est accessible** (Claude pour Chrome). Lire le contenu de la page de l'onglet actif : c'est l'article à résumer.
-3. **Le texte de l'article est collé dans la conversation.** L'utiliser tel quel.
-4. **Aucun des trois cas.** Demander à l'utilisateur le lien ou le texte, sans deviner de quel article il s'agit.
+1. **A link is provided.** Read the corresponding page, even if another tab is open in the browser.
+2. **No link, but a browser is available** (Claude for Chrome). Read the content of the active tab's page: that is the article to summarize.
+3. **The article text is pasted into the conversation.** Use it as is.
+4. **None of the three cases.** Ask the user for the link or the text, without guessing which article is meant.
 
-Ne lire que la page demandée : ne pas suivre les liens vers des articles connexes.
+Only read the requested page: do not follow links to related articles.
 
-## Vérification du contenu lu
+## Checking the content read
 
-- **La page n'est pas un article** (page d'accueil, liste d'articles, résultats de recherche, vidéo sans transcription...) : le signaler et demander à l'utilisateur quel article viser, sans produire de résumé.
-- **L'article est incomplet** (paywall, réservé aux abonnés, chargement partiel) : ne résumer que ce qui a réellement été lu et commencer la réponse par un avertissement indiquant que le résumé est partiel. Si seuls le titre et un chapô sont accessibles, le dire plutôt que de résumer un article qui n'a pas été lu. Ne pas chercher à contourner le paywall (archives, caches...), et ne jamais compléter le texte manquant avec des suppositions ou des connaissances extérieures.
+- **The page is not an article** (home page, list of articles, search results, video without a transcript...): say so and ask the user which article to target, without producing a summary.
+- **The article is incomplete** (paywall, subscribers only, partial loading): only summarize what was actually read and start the response with a warning stating that the summary is partial. If only the title and a standfirst are accessible, say so rather than summarizing an article that was not read. Do not try to bypass the paywall (archives, caches...), and never fill in the missing text with assumptions or outside knowledge.
 
-## Fidélité au contenu
+## Faithfulness to the content
 
-- Rester fidèle à l'article : aucune interprétation, aucun jugement, aucune conclusion personnelle.
-- N'ajouter aucune information extérieure (contexte, vérification des faits, connaissances propres), même si l'article paraît erroné ou incomplet.
-- Distinguer les faits rapportés, les citations et les opinions de l'auteur, et attribuer chaque affirmation à sa source ("selon...", "d'après...", "l'auteur estime que...") plutôt que de la présenter comme un fait établi par le résumé.
-- Préserver les nuances importantes et les réserves de l'auteur : incertitudes, conditionnel, limites, contre-arguments, points de vue contradictoires rapportés. Ne jamais transformer une hypothèse en fait ni gommer une restriction.
-- Reprendre à l'identique les chiffres, dates et noms propres de l'article.
-- Garder un ton neutre : ne pas ajouter de connotation absente du texte original.
+- Stay faithful to the article: no interpretation, no judgment, no personal conclusion.
+- Add no outside information (context, fact-checking, own knowledge), even if the article seems wrong or incomplete.
+- Distinguish reported facts, quotes and the author's opinions, and attribute each claim to its source ("selon...", "d'après...", "l'auteur estime que...") rather than presenting it as a fact established by the summary.
+- Preserve the author's important nuances and caveats: uncertainties, conditional statements, limitations, counter-arguments, opposing views reported. Never turn a hypothesis into a fact or erase a restriction.
+- Reproduce the article's figures, dates and proper names exactly.
+- Keep a neutral tone: do not add connotations absent from the original text.
 
-## Format de sortie
+## Output format
 
-Rédiger en français, même si l'article est dans une autre langue (citations traduites).
+Write in French, even if the article is in another language (translate quotes).
 
-Le résumé ne dépasse jamais 250 mots au total (titre, essentiel, points clés et nuances compris), quelle que soit la longueur de l'article. Adapter le nombre de points clés à la taille de l'article (estimée approximativement en nombre de mots) :
+The summary never exceeds 250 words in total (title, key takeaway, key points and nuances included), whatever the length of the article. Adapt the number of key points to the size of the article (roughly estimated in words):
 
-| Article | Points clés |
+| Article | Key points |
 |---|---|
-| Brève (moins de 400 mots) | Deux points |
-| Standard (400 à 2 000 mots) | Trois ou quatre points |
-| Long format (plus de 2 000 mots) | Cinq points au maximum, sans regroupement par thème |
+| Brief (under 400 words) | Two points |
+| Standard (400 to 2,000 words) | Three or four points |
+| Long-form (over 2,000 words) | Five points at most, without grouping by theme |
 
-Utiliser ce gabarit :
+Use this template:
 
 ```
-**<Titre de l'article>** (<Média>, <date>)
+**<Article title>** (<Outlet>, <date>)
 
-**L'essentiel** : <une phrase>
+**L'essentiel** : <one sentence>
 
 **Points clés**
 - <point>
@@ -57,8 +57,8 @@ Utiliser ce gabarit :
 - <nuance>
 ```
 
-- Le média et la date ne sont indiqués que s'ils figurent sur la page ; sinon, les omettre avec leurs parenthèses.
-- Chaque point clé et chaque nuance tient en une seule phrase, avec une seule idée.
-- N'inclure la section "Nuances et réserves de l'auteur" que si l'article en contient, avec trois nuances au maximum (les plus importantes). Ne jamais en inventer pour remplir la section.
-- Si le plafond est atteint, retirer les points les moins importants plutôt qu'une nuance ou une réserve de l'auteur.
-- Pour un résumé partiel, placer l'avertissement sur une ligne à part, juste après le titre.
+- The outlet and the date are only given if they appear on the page; otherwise, omit them along with their parentheses.
+- Each key point and each nuance fits in a single sentence, with a single idea.
+- Only include the "Nuances et réserves de l'auteur" section if the article contains any, with three nuances at most (the most important ones). Never invent any to fill the section.
+- If the limit is reached, remove the least important points rather than one of the author's nuances or caveats.
+- For a partial summary, place the warning on a separate line, right after the title.
