@@ -34,13 +34,15 @@ Only read the requested page: do not follow links to related articles.
 
 Write in the language of the user's request, even if the article is in another language (translate quotes). If the request has no identifiable language (bare link, "TL;DR"), use the language of the rest of the conversation, or failing that, the language of the article. Translate the template's headings into that language.
 
-The summary never exceeds 250 words in total (title, key takeaway, key points and nuances included), whatever the length of the article. Adapt the number of key points to the size of the article (roughly estimated in words):
+The size of the summary follows the content of the article, not a fixed format. A key point is a distinct claim, finding or argument of the article, not a piece of supporting evidence: figures, examples, studies and quotes that back the same claim go into the point they support and never make separate points. Before writing, identify the article's main claims and write one key point per claim: an article that develops a single thesis with many figures gets one or two points, whatever its length. The article's length (roughly estimated in words) only sets a ceiling:
 
 | Article | Key points |
 |---|---|
-| Brief (under 400 words) | Two points |
-| Standard (400 to 2,000 words) | Three or four points |
-| Long-form (over 2,000 words) | Five points at most, without grouping by theme |
+| Brief (under 600 words) | One to two points |
+| Standard (600 to 2,000 words) | Two to four points |
+| Long-form (over 2,000 words) | Three to seven points, without grouping several themes into one point |
+
+These numbers are ceilings, not targets: never add a minor or redundant point to reach the maximum.
 
 Use this template:
 
@@ -59,6 +61,5 @@ Use this template:
 
 - The outlet and the date are only given if they appear on the page; otherwise, omit them along with their parentheses.
 - Each key point and each nuance fits in a single sentence, with a single idea.
-- Only include the "Author's nuances and caveats" section if the article contains any, with three nuances at most (the most important ones). Never invent any to fill the section.
-- If the limit is reached, remove the least important points rather than one of the author's nuances or caveats.
+- Only include the "Author's nuances and caveats" section if the article contains any. A nuance qualifies or limits a claim of the article: uncertainty, condition, exception, limitation of a study or of the author's viewpoint, counter-argument or opposing view reported. A warning, a call to action or a projection that reinforces the main message is not a nuance: it belongs in the key points or is left out. List the significant nuances actually expressed in the article, up to three for a brief or standard article and five for a long-form one: a single nuance, or none at all, is normal. Never invent or stretch one to fill the section.
 - For a partial summary, place the warning on a separate line, right after the title.
