@@ -25,14 +25,14 @@ Only read the requested page: do not follow links to related articles.
 
 - Stay faithful to the article: no interpretation, no judgment, no personal conclusion.
 - Add no outside information (context, fact-checking, own knowledge), even if the article seems wrong or incomplete.
-- Distinguish reported facts, quotes and the author's opinions, and attribute each claim to its source ("selon...", "d'après...", "l'auteur estime que...") rather than presenting it as a fact established by the summary.
+- Distinguish reported facts, quotes and the author's opinions, and attribute each claim to its source ("according to...", "the author believes that...") rather than presenting it as a fact established by the summary.
 - Preserve the author's important nuances and caveats: uncertainties, conditional statements, limitations, counter-arguments, opposing views reported. Never turn a hypothesis into a fact or erase a restriction.
 - Reproduce the article's figures, dates and proper names exactly.
 - Keep a neutral tone: do not add connotations absent from the original text.
 
 ## Output format
 
-Write in French, even if the article is in another language (translate quotes).
+Write in the language of the user's request, even if the article is in another language (translate quotes). If the request has no identifiable language (bare link, "TL;DR"), use the language of the rest of the conversation, or failing that, the language of the article. Translate the template's headings into that language.
 
 The summary never exceeds 250 words in total (title, key takeaway, key points and nuances included), whatever the length of the article. Adapt the number of key points to the size of the article (roughly estimated in words):
 
@@ -47,18 +47,18 @@ Use this template:
 ```
 **<Article title>** (<Outlet>, <date>)
 
-**L'essentiel** : <one sentence>
+**Key takeaway**: <one sentence>
 
-**Points clés**
+**Key points**
 - <point>
 - <point>
 
-**Nuances et réserves de l'auteur**
+**Author's nuances and caveats**
 - <nuance>
 ```
 
 - The outlet and the date are only given if they appear on the page; otherwise, omit them along with their parentheses.
 - Each key point and each nuance fits in a single sentence, with a single idea.
-- Only include the "Nuances et réserves de l'auteur" section if the article contains any, with three nuances at most (the most important ones). Never invent any to fill the section.
+- Only include the "Author's nuances and caveats" section if the article contains any, with three nuances at most (the most important ones). Never invent any to fill the section.
 - If the limit is reached, remove the least important points rather than one of the author's nuances or caveats.
 - For a partial summary, place the warning on a separate line, right after the title.
